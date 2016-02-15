@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="ViewController" customModule="LoopRollingCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXz-lT-LzY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="eg5-ea-PcL"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="uhM-QC-ds4"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1ts-Qs-diw">
+                                <rect key="frame" x="168" y="90" width="39" height="37"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.37254901959999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7XB-se-Mqo">
+                                <rect key="frame" x="0.0" y="120" width="375" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8yK-oM-1S9"/>
+                                </constraints>
+                                <collectionViewLayout key="collectionViewLayout" id="S2r-nR-RBE" customClass="BannerCollectionViewLayout" customModule="LoopRollingCollectionView" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoopRollingCollectionView.BannerCollectionViewCell" id="WLu-Ld-nHG" customClass="BannerCollectionViewCell" customModule="LoopRollingCollectionView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NJr-Ur-2mB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="NJr-Ur-2mB" secondAttribute="bottom" id="8Me-q1-PCs"/>
+                                            <constraint firstAttribute="trailing" secondItem="NJr-Ur-2mB" secondAttribute="trailing" id="ALG-ku-cz6"/>
+                                            <constraint firstItem="NJr-Ur-2mB" firstAttribute="leading" secondItem="WLu-Ld-nHG" secondAttribute="leading" id="QRj-0y-RKh"/>
+                                            <constraint firstItem="NJr-Ur-2mB" firstAttribute="top" secondItem="WLu-Ld-nHG" secondAttribute="top" id="oHD-LB-Pl7"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="bannerImageView" destination="NJr-Ur-2mB" id="7z2-TS-Gcg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="u4J-eK-59t"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="QRL-iO-VCt"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cX0-LU-IE9">
+                                <rect key="frame" x="168" y="190" width="39" height="37"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.37254901959999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2hq-RA-Oqa">
+                                <rect key="frame" x="0.0" y="220" width="375" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="4Jz-e1-6CO"/>
+                                </constraints>
+                                <collectionViewLayout key="collectionViewLayout" id="CZe-Ws-o1a" customClass="ImageCollectionViewLayout" customModule="LoopRollingCollectionView" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoopRollingCollectionView.ImageCollectionViewCell" id="F3h-t9-mdq" customClass="ImageCollectionViewCell" customModule="LoopRollingCollectionView">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SA4-dC-J8c">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="SA4-dC-J8c" firstAttribute="top" secondItem="F3h-t9-mdq" secondAttribute="top" id="E0b-Xq-wMC"/>
+                                            <constraint firstAttribute="trailing" secondItem="SA4-dC-J8c" secondAttribute="trailing" id="TJi-s2-dGx"/>
+                                            <constraint firstAttribute="bottom" secondItem="SA4-dC-J8c" secondAttribute="bottom" id="tkz-VB-nim"/>
+                                            <constraint firstItem="SA4-dC-J8c" firstAttribute="leading" secondItem="F3h-t9-mdq" secondAttribute="leading" id="vy7-vf-ukt"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="presentImageView" destination="SA4-dC-J8c" id="Dbj-PC-Ouv"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="2HH-d8-NqH"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="1O4-ox-pgK"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1ts-Qs-diw" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="70" id="26e-Pu-T1d"/>
+                            <constraint firstAttribute="trailing" secondItem="2hq-RA-Oqa" secondAttribute="trailing" id="6IE-xV-ENs"/>
+                            <constraint firstItem="FXz-lT-LzY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="6vx-sJ-0CJ"/>
+                            <constraint firstAttribute="centerX" secondItem="1ts-Qs-diw" secondAttribute="centerX" id="9aZ-YR-Rf5"/>
+                            <constraint firstAttribute="centerX" secondItem="cX0-LU-IE9" secondAttribute="centerX" id="E8F-Nl-KiY"/>
+                            <constraint firstItem="7XB-se-Mqo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LKX-Sl-pXr"/>
+                            <constraint firstItem="2hq-RA-Oqa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="N6z-eJ-pHI"/>
+                            <constraint firstAttribute="trailing" secondItem="FXz-lT-LzY" secondAttribute="trailing" id="NE2-XC-Gfa"/>
+                            <constraint firstItem="cX0-LU-IE9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="170" id="pBA-bc-CBz"/>
+                            <constraint firstItem="7XB-se-Mqo" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="tp8-e3-Kio"/>
+                            <constraint firstItem="FXz-lT-LzY" firstAttribute="bottom" secondItem="7XB-se-Mqo" secondAttribute="top" id="u14-b1-Wl9"/>
+                            <constraint firstItem="FXz-lT-LzY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="xV4-52-Yxv"/>
+                            <constraint firstItem="2hq-RA-Oqa" firstAttribute="top" secondItem="7XB-se-Mqo" secondAttribute="bottom" id="yC7-41-gMh"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bannerCollectionView" destination="7XB-se-Mqo" id="WeQ-Wc-2Ls"/>
+                        <outlet property="bannerScrollView" destination="FXz-lT-LzY" id="NvL-Oy-2i6"/>
+                        <outlet property="collectionViewPageControl" destination="cX0-LU-IE9" id="BMo-IP-r9w"/>
+                        <outlet property="imageCollectionView" destination="2hq-RA-Oqa" id="0Rz-Ce-d6Z"/>
+                        <outlet property="scrollViewPageControl" destination="1ts-Qs-diw" id="rHl-nT-85L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="338.5" y="188.5"/>
+        </scene>
+    </scenes>
+</document>
